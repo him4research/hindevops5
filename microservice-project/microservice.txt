@@ -1,0 +1,19 @@
+# subsystem of big app
+Small pakages breakdown of monolithic big application in small parths and make connection to talk to each other. 
+# set of small services fullfilling one requirement.Or one business agenda. 
+
+
+Global provisioning system of vehicals. 
+ONe service is 
+
+Position simulator collect and give the position of the vehical 
+It will send data to ques microservice
+Then other positon microserice. WHere the position hisotiry is and other posiiton of the 
+tthen microservice is frontend 
+We have API gateway. Its a simple component incoming request to other microservices. 
+Its like Maps request to microservices. So API gateway is Mapping. Front-end to back-end 
+
+So 1st we are deploying the queue. 
+Then deploy the Position Simulator. Spring boot application. 
+
+
