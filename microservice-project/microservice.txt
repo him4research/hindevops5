@@ -26,6 +26,9 @@ Then run url - http://localhost:30020/vehicles/City Truck
 or ---- http://localhost:30020/vehicles/City%20Truck
 
 
+Now add api gateway. 
+
+
 
 
 
