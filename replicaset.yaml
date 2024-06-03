@@ -1,21 +1,21 @@
+#service does not need matchlabels in selector but replicaset needs
+#selector is in spec section and matches with spec section of pods. 
+# this repicaset is managing pods which have lable app:webapp 
+
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
   name: webapp-rs
-  labels:
-    app: 
-    tier: frontend
 spec:
   # modify replicas according to your case
   replicas: 1
   selector:
     matchLabels:
-      tier: frontend
+      app: webapp
   template:
     metadata:
       labels:
-        tier: webapp
-        release: "0-5"
+        app: webapp
     spec:
       containers:
       - name: webapp
