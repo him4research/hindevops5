@@ -30,6 +30,6 @@ replicas:10
 minReadySecond: 30        How much time after pod has been created we show it in a ready state. I.e after 30 seconds when pod create it come into ready state. 
 stratefy:
     RollinUpdate:
-       maxSurge:0
-       maxunavailable:2              #  maxunavailable 2 means at a time 2 old will dlete and 2 new will come up, then again next 2 will dlete and next 2 will come up. 
+       maxSurge:2                    #  max surge meaning 2 so total will be 12 i.e create 2 extra for deployement because maxunavailable:0 so all 10 should be present. 
+       maxunavailable:2              #  maxunavailable 2 means at a time 2 old will dlete and 2 new will come up, then again next 2 will dlete and next 2 will come up. (We can also give in percentange)
     typr: RollinUpdate # by defualt deployement is rolling update only. 
