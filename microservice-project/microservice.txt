@@ -14,6 +14,13 @@ We have API gateway. Its a simple component incoming request to other microservi
 Its like Maps request to microservices. So API gateway is Mapping. Front-end to back-end 
 
 So 1st we are deploying the queue. 
+login to the queue with admin admin on crome
+
 Then deploy the Position Simulator. Spring boot application. 
+See the queue massages will increse. \
+
+Now deploy position tracker. 
+
+
 
 
