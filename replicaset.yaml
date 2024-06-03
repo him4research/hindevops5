@@ -14,8 +14,9 @@ spec:
   template:
     metadata:
       labels:
-        tier: frontend
+        tier: webapp
+        release: "0-5"
     spec:
       containers:
-      - name: php-redis
-        image: us-docker.pkg.dev/google-samples/containers/gke/gb-frontend:v5
+      - name: webapp
+        image: richardchesterwood/k8s-fleetman-webapp-angular:release0-5
