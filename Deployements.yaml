@@ -6,7 +6,7 @@ metadata:
   name: webapp-dep
 spec:
   # modify replicas according to your case
-  minReadySeconds: 30           #
+  minReadySeconds: 30 # How much time after pod has been created we show it in a ready state. I.e after 30 seconds when pod create it come into ready state. 
   replicas: 2
   selector:
     matchLabels:
