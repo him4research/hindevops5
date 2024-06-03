@@ -1,0 +1,22 @@
+# port for queue is 8161 (its a admin console in apache )expose it to browser on 30010
+#image: richardchesterwood/k8s-fleetman-queue:release1
+# port 61616 is used to send and recieve massages. 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp-dep
+spec:
+  # modify replicas according to your case
+  minReadySeconds: 30 # How much time after pod has been created we show it in a ready state. I.e after 30 seconds when pod create it come into ready state. 
+  replicas: 5
+  selector:
+    matchLabels:
+      app: webapp-dep
+  template:
+    metadata:
+      labels:
+        app: webapp-dep
+    spec:
+      containers:
+      - name: webapp-dep
+        image: richardchesterwood/k8s-fleetman-queue:release1
