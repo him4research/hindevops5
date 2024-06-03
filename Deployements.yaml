@@ -1,4 +1,6 @@
 # can do rolling update with zero downtime. 
+#kubectl rollout status deployement webapp ------- to get the current status of deployement. 
+#
 
 apiVersion: apps/v1
 kind: Deployment
@@ -7,7 +9,7 @@ metadata:
 spec:
   # modify replicas according to your case
   minReadySeconds: 30 # How much time after pod has been created we show it in a ready state. I.e after 30 seconds when pod create it come into ready state. 
-  replicas: 2
+  replicas: 5
   selector:
     matchLabels:
       app: webapp
