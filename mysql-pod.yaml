@@ -13,3 +13,22 @@ spec:
         value: password
       - name: MYSQL_DATABASE
         value: himanshu
+
+
+---
+
+# First we will add lable 
+# Put label in pod as  app: webapp 
+# use selector in service as app:webapp 
+apiVersion: v1
+kind: Service
+metadata:
+  name: database
+spec:
+  selector:  
+    app: mysql
+  ports:
+    - port: 3306
+      #target port is contianer port, Port is service port mostly same both part This is clusterIP  service Means only inside the cluster not webbrowser. 
+      #But our is webapp so we need NodePort service. NOdeport is 30000 to 327000
+  type: ClusterIP  #internet facing S
