@@ -20,6 +20,10 @@ Then deploy the Position Simulator. Spring boot application.
 See the queue massages will increse. \
 
 Now deploy position tracker. 
+So now queu is dequeue number will be gone. 
+
+
+
 
 
 
