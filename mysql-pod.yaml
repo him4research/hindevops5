@@ -1,3 +1,14 @@
+get the Ip of database svc - 
+# kubectl exec -it webapp-dep-5c6d9f45bf-5mb22 sh 
+# try to check nsllokup database (our mysql service from some other port.)
+# will  install mysql clint and try to connect. 
+# apk update( as this is alpine system image)
+# apk add mysql-client 
+# mysql (error as mysql is running in some other container.)
+# So we will make connection between the database and our pod 
+# mysql -h database (name of url or Ip or service) -uroot -ppassword
+# mysql -h database -uroot -ppassword
+
 apiVersion: v1
 kind: Pod
 metadata:
@@ -32,5 +43,3 @@ spec:
       #target port is contianer port, Port is service port mostly same both part This is clusterIP  service Means only inside the cluster not webbrowser. 
       #But our is webapp so we need NodePort service. NOdeport is 30000 to 327000
   type: ClusterIP  #internet facing S
-
-
