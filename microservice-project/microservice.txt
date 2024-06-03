@@ -21,6 +21,10 @@ See the queue massages will increse. \
 
 Now deploy position tracker. 
 So now queu is dequeue number will be gone. 
+Create a service for service-position-tracker. 
+Then run url - http://localhost:30020/vehicles/City Truck
+or ---- http://localhost:30020/vehicles/City%20Truck
+
 
 
 
