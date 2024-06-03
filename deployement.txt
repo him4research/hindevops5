@@ -2,15 +2,16 @@ We  have new verison for deployement - So we have new Image i.e. tag change of i
 So we have to rollout deployement for our new verion. 
 lets say no of replicas are 6 
 
-kubectl rollout status deployement firstdeploy
+
 # when we trigger a deployement then to check the status of rollout use above command. 
+kubectl rollout status deployment.apps/webapp-dep
 
 Alos check when run new deployement
-kubectl apply -f firstdeployement ; watch "kubectl get rs -o wide "
+kubectl apply -f deployement.yaml ; watch "kubectl get rs -o wide "
 We will see 1 replica creating and one deleting. That is rolling update. 
 
-kubectl rollout status deployement firstdeploy
 This will give logs command for rolling update. 
+kubectl rollout status deployment.apps/webapp-dep
 
   
 Rollout will only trigger when we chnage in pod sepcification. 
