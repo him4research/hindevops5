@@ -10,5 +10,5 @@ To see the IP of pod ------- kubectl get pod -o wide   Till now get the IP but n
 # Getting inside the container ------
 kubeclt exec nginx(podname)  ls 
 
-
+kubeclt exec nginx(podname) sh          ----to go inside shell 
 
