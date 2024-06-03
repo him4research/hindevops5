@@ -9,3 +9,8 @@ kubectl get all -n kube-system
 
 kubectl get ns 
 
+Inside the pod run - 
+cat /etc/resolv.conf    this will give configure DNS name resolution going to work.  Nameserver 
+Try to run nslookup for our database - nslookup database  (our mysql server service name is databse.)
+So service descovery means name of service act as a dns or FQDN for that service or pod. 
+
