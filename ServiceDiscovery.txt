@@ -1,0 +1,11 @@
+# Kubernetis manage its own private service discovery or Called DNS . 
+# this services are in Key:value paris
+Key are lables to identify kubenrnetis services 
+And Values are Ip addresses of those service. 
+Service name is kube-dns 
+So 2 pods in same cluster will talk to each other using this DNS service/ 
+So this service is in kube-system namespace 
+kubectl get all -n kube-system
+
+kubectl get ns 
+
