@@ -1,0 +1,35 @@
+# Deploy image  richardchesterwood/k8s-fleetman-queue
+# running on port 8161 is the admin console 
+#user and pass (admis/admin)
+# expose nordport on 30010 
+# port: 61616  is internal service no nodeport required for it. 
+apiVersion: v1
+kind: Service
+metadata:
+  name: fleetman-queue
+spec:
+  selector:
+     #THis defines which services are going to be represented by this service 
+     # THis service becomes a network end point for either other services
+     #Or may be external user like browser.  
+    app: queue
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8161
+      #target port is contianer port, Port is service port mostly same both part This is clusterIP  service Means only inside the cluster not webbrowser. 
+      #But our is webapp so we need NodePort service. NOdeport is 30000 to 327000
+      targetPort: 8161
+      nodePort: 30010
+
+    - name: endpoint
+      port: 61616 
+
+
+  type: NodePort    #internet facing 
+
+
+  #kubectl port-forward svc/fleetman-queue 30010:8161
+#localhost:30010
+#login by clicking on manage activeMQ broker 
+# normally username and passowrd is admin admin
