@@ -26,6 +26,6 @@ spec:
   type: NodePort    #internet facing 
 
 
-kubectl port-forward svc/fleetman-queue 30010:8161
+#kubectl port-forward svc/fleetman-queue 30010:8161
 #localhost:30010
 
