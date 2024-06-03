@@ -49,4 +49,19 @@ kubectl port-forward svc/fleetman-queue 30010:8161
 
 #localhost:30010
 
+# Deleting the pod 
+kubectl delete po podname
+
+All gracefully terminate not forcfully/ 
+
+# Replicaset  its part of app/v1 ---- 
+https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/
+If pod deleted by itself then it will not come up directly so we used replicasets. So Its like a controller which will recreate it. i.e.
+
+If we put 4 replcas at a time then 4 will run always. 
+And we dont have to write pods if we are having replica set/ 
+From pod defination copy  whole section from template and paste it in spec. Inside template copy whole metadat of previos pod defination file. 
+
+
+
 
