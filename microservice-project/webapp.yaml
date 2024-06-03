@@ -1,0 +1,48 @@
+# image richardchesterwood/k8s-fleetman-webapp-angular:release1
+# export port 80 to outside worls \
+# same env varibales. 
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp
+spec:
+  # modify replicas according to your case
+  minReadySeconds: 30 # How much time after pod has been created we show it in a ready state. I.e after 30 seconds when pod create it come into ready state. 
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webapp
+  template:
+    metadata:
+      labels:
+        app: webapp
+    spec:
+      containers:
+      - name: webapp
+        image: richardchesterwood/k8s-fleetman-webapp-angular:release1
+        env: 
+          - name: SPRING_PROFILES_ACTIVE
+            value: production-microservice
+
+---
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: fleetman-webapp
+spec:
+  selector:
+     #THis defines which services are going to be represented by this service 
+     # THis service becomes a network end point for either other services
+     #Or may be external user like browser.  
+    app: webapp
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      nodePort: 30080
+
+  type: NodePort    
+
