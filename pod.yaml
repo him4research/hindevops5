@@ -4,8 +4,23 @@ metadata:
   name: nginx
   labels:
     app: webapp
+    release: "0"
 spec:
   containers:
   - name: webapp
     image: richardchesterwood/k8s-fleetman-webapp-angular:release0
-    
+
+---        
+# 3 dashes are document seprater so we can use same  for multiple manifest in one file. 
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: new-web-app-o-5
+  labels:
+    app: webapp
+    release: "0-5" 
+spec:
+  containers:
+  - name: webapp
+    image: richardchesterwood/k8s-fleetman-webapp-angular:release0-5
