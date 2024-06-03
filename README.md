@@ -28,3 +28,9 @@ port is service port or clusterIp Port
 If we want to use service for internal cluster not for internet use Cluster IP
 
 To run on internet ---- http://localhost:30080/
+
+
+# Labels 
+kubectl get po --show-labels         shows all pods with labels 
+
+Modify by show specific lable release=0 --------- kubectl get po --show-labels -l release=0 
