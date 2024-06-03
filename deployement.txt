@@ -1,0 +1,16 @@
+We  have new verison for deployement - So we have new Image i.e. tag change of image. 
+So we have to rollout deployement for our new verion. 
+lets say no of replicas are 6 
+
+kubectl rollout status deployement firstdeploy
+# when we run 
+
+  
+Rollout will only trigger when we chnage in pod sepcification. 
+If we update replicas from 5 to 10 then rollout will not trigger. As it is not part of pod specification file. 
+     eg 
+    spec:
+      containers:
+      - name: webapp
+        image: richardchesterwood/k8s-fleetman-webapp-angular:release0-5
+
