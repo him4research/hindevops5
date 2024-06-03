@@ -14,3 +14,7 @@ cat /etc/resolv.conf    this will give configure DNS name resolution going to wo
 Try to run nslookup for our database - nslookup database  (our mysql server service name is databse.)
 So service descovery means name of service act as a dns or FQDN for that service or pod. 
 
+FQDN --- fully qualifies domain name. 
+database.default.svc.cluster.local is fqdn for databaseservice. Tyr to nslookup we will get it. 
+If we are in some other namespace then default then do try nslookup FQDN 
+eg=== nslookup database.default.svc.cluster.local
