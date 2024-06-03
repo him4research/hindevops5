@@ -1,6 +1,10 @@
 # First we will add lable 
 # Put label in pod as  app: queue 
 # use selector in service as app:webapp 
+# Deploy image  richardchesterwood/k8s-fleetman-queue
+# running on port 8161 is the admin console 
+#user and pass (admis/admin)
+# expose nordport on 30010 
 apiVersion: v1
 kind: Service
 metadata:
@@ -14,9 +18,9 @@ spec:
   ports:
     - name: http
       protocol: TCP
-      port: 80
+      port: 8161
       #target port is contianer port, Port is service port mostly same both part This is clusterIP  service Means only inside the cluster not webbrowser. 
       #But our is webapp so we need NodePort service. NOdeport is 30000 to 327000
-      targetPort: 80
-      nodePort: 30080
+      targetPort: 8161
+      nodePort: 30010
   type: NodePort    #internet facing 
