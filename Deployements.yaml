@@ -2,6 +2,12 @@
 #kubectl rollout status deployement webapp ------- to get the current status of deployement. 
 #
 
+# can do rolling update with zero downtime. 
+#kubectl rollout status deployement webapp ------- to get the current status of deployement. 
+#kubectl port-forward service/deployment-webapp 30083:83
+#localhost:30083
+#
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -12,12 +18,12 @@ spec:
   replicas: 5
   selector:
     matchLabels:
-      app: webapp
+      app: webapp-dep
   template:
     metadata:
       labels:
-        app: webapp
+        app: webapp-dep
     spec:
       containers:
-      - name: webapp
+      - name: webapp-dep
         image: richardchesterwood/k8s-fleetman-webapp-angular:release0
