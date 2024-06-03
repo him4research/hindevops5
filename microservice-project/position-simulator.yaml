@@ -1,1 +1,28 @@
+# we dont need port for this. 
+# image used is richardchesterwood/k8s-fleetman-position-simulator:release1
+# But it needs some environment varibles its a spring boot application. 
+# env are SPRING_PROFILE_ACTIVE and production-microservices
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: position-simulator
+spec:
+  # modify replicas according to your case
+  minReadySeconds: 30 # How much time after pod has been created we show it in a ready state. I.e after 30 seconds when pod create it come into ready state. 
+  replicas: 1
+  selector:
+    matchLabels:
+      app: position-simulator
+  template:
+    metadata:
+      labels:
+        app: position-simulator
+    spec:
+      containers:
+      - name: position-simulator
+        image: richardchesterwood/k8s-fleetman-position-simulator:release1
+        env: 
+          - name: SPRING_PROFILES_ACTIVE
+            value: production-microservice
 
+# see logs of pod 
