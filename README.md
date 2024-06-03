@@ -43,5 +43,9 @@ Put label in pod as  app: queue    {{{ use selector in service as app:webapp    
 ((user and pass (admis/admin)))
 (( expose nordport on 30010 ))
 
+Also add seprate service for it. AFter running service, 
+
+kubectl port-forward svc/fleetman-queue 30010:8161
+#localhost:30010
 
 
