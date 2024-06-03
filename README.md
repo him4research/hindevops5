@@ -46,6 +46,7 @@ Put label in pod as  app: queue    {{{ use selector in service as app:webapp    
 Also add seprate service for it. AFter running service, 
 
 kubectl port-forward svc/fleetman-queue 30010:8161
+
 #localhost:30010
 
 
