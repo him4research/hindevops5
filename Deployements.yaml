@@ -1,6 +1,8 @@
 # can do rolling update with zero downtime. 
 #kubectl rollout status deployement webapp ------- to get the current status of deployement. 
-#
+# kubectl rollout history deployment deployementname
+# going to previous revision -----  kubectl rollout undo deploy webapp --to-revision=2
+# or just one rollout back ------ kubectl rollout undo deploy webapp 
 
 # can do rolling update with zero downtime. 
 #kubectl rollout status deployement webapp ------- to get the current status of deployement. 
