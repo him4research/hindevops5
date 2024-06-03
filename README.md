@@ -34,3 +34,14 @@ To run on internet ---- http://localhost:30080/
 kubectl get po --show-labels         shows all pods with labels 
 
 Modify by show specific lable release=0 --------- kubectl get po --show-labels -l release=0 
+
+# add another pod queue
+First we will add lable 
+
+Put label in pod as  app: queue    {{{ use selector in service as app:webapp     }}}{{ Deploy image  richardchesterwood/k8s-fleetman-queue}}
+(( running on port 8161 is the admin console ))
+((user and pass (admis/admin)))
+(( expose nordport on 30010 ))
+
+
+
