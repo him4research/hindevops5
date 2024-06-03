@@ -1,1 +1,14 @@
-
+# First we will add lable 
+# Put label in pod as  app: webapp 
+# use selector in service as app:webapp 
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+spec:
+  selector:
+    app.kubernetes.io/name: MyApp
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 9376
