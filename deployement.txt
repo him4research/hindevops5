@@ -22,3 +22,14 @@ spec:
       - name: webapp
         image: richardchesterwood/k8s-fleetman-webapp-angular:release0-5
 
+
+
+
+LEt say 
+replicas:10
+minReadySecond: 30        How much time after pod has been created we show it in a ready state. I.e after 30 seconds when pod create it come into ready state. 
+stratefy:
+    RollinUpdate:
+       maxSurge:0
+       maxunavailable:2              #  maxunavailable 2 means at a time 2 old will dlete and 2 new will come up, then again next 2 will dlete and next 2 will come up. 
+    typr: RollinUpdate # by defualt deployement is rolling update only. 
