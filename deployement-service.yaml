@@ -1,0 +1,27 @@
+# First we will add lable 
+# Put label in pod as  app: webapp 
+# use selector in service as app:webapp 
+
+#kubectl port-forward service/deployment-webapp 30083:83
+#localhost:30083
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: deployment-webapp
+spec:
+  selector:
+     #THis defines which services are going to be represented by this service 
+     # THis service becomes a network end point for either other services
+     #Or may be external user like browser.  
+    app: webapp-dep
+  ports:
+    - name: http
+      protocol: TCP
+      port: 83
+      #target port is contianer port, Port is service port mostly same both part This is clusterIP  service Means only inside the cluster not webbrowser. 
+      #But our is webapp so we need NodePort service. NOdeport is 30000 to 327000
+      targetPort: 80
+      nodePort: 30083
+  type: NodePort    #internet facing 
