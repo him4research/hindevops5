@@ -1,3 +1,5 @@
+# we want to attach one folder inside the contianer to outside the contianer so we use volumen mount. 
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -17,6 +19,18 @@ spec:
       containers:
       - name: mongodb
         image: mongo:3.6.5-jessie
+        volumeMounts:
+           - name: mongo-persistent-storage
+             mounthPath: /data/db (inside the contianer)
+
+        volume:                       # alll the volume we have above 
+            - name: mongo-persistent-storage
+              hostpath:                virtual machine path 
+                 path: /mnt/some/directory/structure
+                 tyep: DirectoryORCreate
+                 
+             
+        
 
 ___
 
