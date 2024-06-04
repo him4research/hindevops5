@@ -3,4 +3,53 @@ key=pair ==== eks-demo.pem
 Public eg IP - 54.146.148.29
 Private Ip - 54.146.148.29
 
+3 clis --- aws cli, kubectl and eksctl
+install eksctl   ---/usr/local/bin. 0.18.0
+Commands to install eksctl - 
+curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+sudo mv /tmp/eksctl /usr/local/bin
+eksctl version
+
+
+update aws cli to verison2 
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+
+Now run( aws eks list-cluster )
+Output- Unable to locate credentials. You can configure credentials by running "aws configure".
+
+So configure the cluster - 
+go to IAM - create a group and user - permission  for ekscluster 
+Give group permission to group
+amazoneec2fullaccess 
+AmazoneEKSClusterPolicy
+IAMFullAccess
+AwsCloudFormationFullAccess
+Programtic access 
+
+Or we can check eksctl minimum IAM policy page 
+
+Aws configure
+AccessKEyIF 
+SecretkeyID
+region
+output
+
+Now again check =-- aws eks list-clusters
+What eksctl do ------ it will call aws eks command 
+
+Now install kubectl 
+Follow instructions - https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
+USe same verison of kubectl as kubernetis eks cluster
+
+
+Now Create a cluster -- 
+
+eksctl create cluster --name fleetman --nodes-min=3 
+
+
+eksctl delete cluster fleetman
+
+
 
