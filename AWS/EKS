@@ -1,1 +1,10 @@
-HI
+One EC2 instance is one node in. i.e. physical server in genral term.
+Multiple nodes or Ec2 are called cluster. 
+Matser Node will schduling the jobs to other nodes. 
+API gatway will be running atleast 2 nodes. 
+using EBS for elastic block storages. 
+So we have 3 nodes and 1 master node. 
+Kops Vs EKS (KOPS are older and good track record) We have take care of master nodes. 
+kops - we have to responsible for master node. By deafult we get single master. 
+eksctl Fargate no need to manage atall
+I am choosing KOPS 
