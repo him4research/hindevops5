@@ -25,12 +25,55 @@ spec:
 
         volume:                       # alll the volume we have above 
             - name: mongo-persistent-storage
-              hostpath:                virtual machine path 
+              hostpath:                virtual machine path        # we have hardcoded the path here. SO we havalso do a pointer to this configuration to how we want to mount So seprate file main. 
                  path: /mnt/some/directory/structure
                  tyep: DirectoryORCreate
+
+---
+# what do we want 
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mongo-pvc
+spec:
+   storageClassName: mylocalstorage    (it will be used for check the volume to claim)
+   accessModes:
+       - ReadWriteOnce
+   resources:            We need sto request some resources of type storage and size is 20gb 
+      requests: 
+         Storage: 20Gi
+# access modes if needs to be added. 
+ReadWriteOnce ---- the volume can be mounted as read-write bt single node
+ReadWriteMany----- the volume can be mounted as read-write by many nodes
+ReadOnlyMany----volume has been mounted as readonly by many nodes.
+
+
+
+
+---
+How we want to implement it 
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: local-storage
+spec: 
+   storageClassName: mylocalstorage
+   capacity:
+       storage: 100Gi (20 gigabite to our directory structure. )
+   accessModes:
+      - ReadWriteOnce      (only for single node has this ebs for aws)   
+   hostpath: 
+     path: /mnt/some /directory/dtructure" 
+     type: DirectoryOrCreate
+
+---- now binding between persistance volume  and claim. So we need StorageClass. 
+
+
+
+
                  
              
-        
+       
 
 ___
 
