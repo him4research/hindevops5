@@ -1,1 +1,6 @@
+First installing the bootstrape instance- t2micro. Login to the instance that instance will work as a bastion host. 
+key=pair ==== eks-demo.pem
+Public eg IP - 54.146.148.29
+Private Ip - 54.146.148.29
+
 
