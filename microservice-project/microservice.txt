@@ -28,6 +28,9 @@ or ---- http://localhost:30020/vehicles/City%20Truck
 
 Now add api gateway. 
 
+update all the images of all 5 projects to release-2. 
+Now apply persistent volume to save the history of psotion of So we are using MongoDB database for saving it/ 
+
 
 
 
