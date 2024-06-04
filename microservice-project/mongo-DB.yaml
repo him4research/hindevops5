@@ -21,7 +21,7 @@ spec:
         image: mongo:3.6.5-jessie
         volumeMounts:
            - name: mongo-persistent-storage
-             mounthPath: /data/db (inside the contianer)
+             mounthPath: /data/db (inside the contianer which needs to be mount)
 
         volume:                       # alll the volume we have above 
             - name: mongo-persistent-storage
