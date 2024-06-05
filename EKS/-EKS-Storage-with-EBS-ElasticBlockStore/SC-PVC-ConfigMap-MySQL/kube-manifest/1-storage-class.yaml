@@ -1,4 +1,5 @@
 # storage class automatically creates persistent volume for us. We dont have to create it explicitly. 
+# Reclaim policy is delete - menaing when persistent volumeclain delete then only persistent class delete.
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata: 
