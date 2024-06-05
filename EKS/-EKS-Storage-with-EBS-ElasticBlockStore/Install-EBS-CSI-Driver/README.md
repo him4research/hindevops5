@@ -64,6 +64,17 @@ kubectl version --client --short
 ```
 # Deploy EBS CSI Driver
 kubectl apply -k "github.com/kubernetes-sigs/aws-ebs-csi-driver/deploy/kubernetes/overlays/stable/?ref=master"
+Latest
+kubectl apply -k "github.com/kubernetes-sigs/aws-ebs-csi-driver/deploy/kubernetes/overlays/stable/?ref=release-1.31"
+Also install git if it is not present - 
+sudo yum update -y
+
+sudo yum install git -y
+
+git — version
+
+git config — global user.name “Your Name”
+git config — global user.email “your_email@example.com”
 
 # Verify ebs-csi pods running
 kubectl get pods -n kube-system
