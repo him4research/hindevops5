@@ -1,3 +1,4 @@
+# storage class automatically creates persistent volume for us. We dont have to create it explicitly. 
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata: 
