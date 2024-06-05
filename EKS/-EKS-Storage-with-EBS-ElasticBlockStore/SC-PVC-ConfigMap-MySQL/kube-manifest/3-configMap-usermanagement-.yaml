@@ -1,3 +1,4 @@
+#In data we are creating a mysql mgmt script/
 apiVersion: v1
 kind: ConfigMap
 metadata:
